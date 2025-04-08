@@ -27,20 +27,18 @@ num1.forEach(element => {
 arrayOfNumbers([12,-3,-5,6]);
 
 
-//Question 3 
-function employeeProfile(profile = []){
-    profile.forEach((item,index) => {
-        profile[index]= item;
-    });
-return profile;
-};
+//Question 3
+function employeeProfile(profile){
+    return profile.sort((a, b)=>a.salary-b.salary);
+    };
+    
+    const employeeDetails = employeeProfile([{id:1,name:"Akeza",salary:2600},
+    {id:2,name:"Saloi",salary:500}]);
+    
+    console.log(employeeDetails);
 
-console.log(employeeProfile([
-    {employeename:"Akeza",id:1,salary: 20000},
-    {employeename:"Saloi",id: 2,salary: 3000}
-]
-)
-);
+
+
 // Question 4
 
 function multiplesOfTwo(arrayOfMultiplesOfTwo = []){
@@ -53,9 +51,14 @@ function multiplesOfTwo(arrayOfMultiplesOfTwo = []){
 console.log(multiplesOfTwo([1,2,3,4,5,6,7]));
 
 //Question 5
-function numbers(num2 = []){
 
-    
-    return num2;
-};
-console.log(numbers([2,3,4,5,9,8]))
+function numbers(numbersArray){
+    numbersArray.forEach((item,index)=>{
+        if(index<4){
+            console.log(`${item*8}`)
+        } else if(index >= numbersArray.length-2){
+            console.log(`${item+5}`)
+        }
+    })
+}
+numbers([5,7,4,0,23,1]);
